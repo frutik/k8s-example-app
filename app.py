@@ -8,8 +8,8 @@ from fastapi.logger import logger
 app = FastAPI()
 
 
-@app.get("/status")
-def status():
+@app.get("/hello")
+def hello():
     logger.warning('Request!')
     return {"Hello": "World"}
 
