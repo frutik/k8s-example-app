@@ -1,24 +1,16 @@
 import os
 import uvicorn
 
-from fastapi import FastAPI, Form
+from fastapi import FastAPI
 from fastapi.logger import logger
 
 
 app = FastAPI()
 
-@app.on_event("startup")
-def startup_event():
-    logger.warning('Application startup')
-
-
-@app.on_event("shutdown")
-def shutdown_event():
-    logger.warning('Application shutdown')
-
 
 @app.get("/status")
 def status():
+    logger.warning('Request!')
     return {"Hello": "World"}
 
 
