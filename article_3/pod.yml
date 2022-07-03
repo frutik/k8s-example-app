@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod
+  labels:
+    site: demo-pod
+spec:
+  containers:
+    - name: demo-app
+      image: frutik777/k8s-example:latest

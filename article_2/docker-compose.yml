@@ -2,6 +2,7 @@ version: '3.6'
 services:
   app:
     restart: always
+    image: frutik777/k8s-example:latest
     build:
       context: ./
       dockerfile: Dockerfile

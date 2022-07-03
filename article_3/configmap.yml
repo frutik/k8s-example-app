@@ -1,0 +1,7 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: demo-app-configmap
+data:
+  APP_PORT: '7777'
+  SOME_ENT_VAR2: 'SOME VALUE'

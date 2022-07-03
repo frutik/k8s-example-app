@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+spec:
+  selector:
+    matchLabels:
+      app: demo-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+        - name: demo-app
+          image: frutik777/k8s-example:latest
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: "150m"
+              memory: "110Mi"
+            limits:
+              cpu: "150m"
+              memory: "210Mi"
+          env:
+            - name: SOME_ENT_VAR1
+              value: "qqqqqqqq"
+          envFrom:
+            - configMapRef:
+                name: demo-app-configmap
+      restartPolicy: Always
